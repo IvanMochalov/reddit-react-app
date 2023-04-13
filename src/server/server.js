@@ -3,9 +3,7 @@ import ReactDOM from "react-dom/server";
 import { indexHtmlTemplate } from "./indexHtmlTemplate";
 import { App } from "../App";
 import axios from 'axios';
-import { params } from './../variables';
-
-const PORT = process.env.PORT || 3000;
+import { params, PORT } from './../variables';
 
 const app = express();
 
