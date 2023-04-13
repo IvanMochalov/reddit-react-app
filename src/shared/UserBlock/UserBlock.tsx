@@ -4,8 +4,9 @@ import { Text } from './../Text';
 import { EColors } from './../../exports';
 import { IconAnon } from './../Icons'
 import styles from './userblock.css';
-import { useAppSelector } from './../../hooks/useReduxHooks'
-import { Link } from 'react-router-dom'
+import { useAppSelector } from './../../hooks/useReduxHooks';
+import { Link } from 'react-router-dom';
+import { params } from './../../variables';
 
 interface IUserBlockProps {
   avatarSrc?: string,
@@ -18,7 +19,7 @@ export function UserBlock({ avatarSrc, username, loading, error }: IUserBlockPro
   const { oauth } = useAppSelector((state) => state.userData);
   return (
     <Link
-      to={oauth ? '/account' : `https://www.reddit.com/api/v1/authorize?client_id=${process.env.CLIENT_ID}&response_type=code&state=random_string&redirect_uri=${process.env.REDIRECT}&duration=permanent&scope=read submit identity`}
+      to={oauth ? '/account' : `https://www.reddit.com/api/v1/authorize?client_id=${params.CLIENT_ID}&response_type=code&state=random_string&redirect_uri=${params.REDIRECT}&duration=permanent&scope=read submit identity`}
       className={styles.userBox}>
       <div className={styles.avatarBox}>
         {avatarSrc

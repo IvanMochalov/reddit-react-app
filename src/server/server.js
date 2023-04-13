@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/server";
 import { indexHtmlTemplate } from "./indexHtmlTemplate";
 import { App } from "../App";
 import axios from 'axios';
+import { params } from './../variables';
 
 const PORT = process.env.PORT || 3000;
 
@@ -13,9 +14,10 @@ app.use("/static", express.static("./dist/client"));
 app.get("/auth", (req, res) => {
   axios.post(
     'https://www.reddit.com/api/v1/access_token',
-    `grant_type=authorization_code&code=${req.query.code}&redirect_uri=${process.env.REDIRECT}`,
+    `grant_type=authorization_code&code=${req.query.code}&redirect_uri=${params.REDIRECT}`,
+
     {
-      auth: { username: process.env.CLIENT_ID, password: process.env.SECRET },
+      auth: { username: params.CLIENT_ID, password: params.SECRET },
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
     }
   )
