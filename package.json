@@ -10,9 +10,9 @@
     "yo-create": "yo react-ts-component-dir",
     "build:dev": "cross-env NODE_ENV=development webpack --config webpack.config.js",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.js",
-    "dev": "cross-env NODE_ENV=development CLIENT_ID=7jhaNYgHvNLiEJh8DPHRUw SECRET=eLdkITrFSY46UTrveAz9if2kGzghqg node ./bin/dev.js",
+    "dev": "cross-env NODE_ENV=development REDIRECT=http://localhost:3000 CLIENT_ID=7jhaNYgHvNLiEJh8DPHRUw SECRET=eLdkITrFSY46UTrveAz9if2kGzghqg node ./bin/dev.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cross-env CLIENT_ID=k81bBSY6JVJZwYXC6X6-Lw SECRET=NdoI3HGQVIoiq5v1QpKB6W8dv_8SxA node ./dist/server/server.js"
+    "start": "cross-env REDIRECT=https://mirror-app.onrender.com CLIENT_ID=k81bBSY6JVJZwYXC6X6-Lw SECRET=NdoI3HGQVIoiq5v1QpKB6W8dv_8SxA node ./dist/server/server.js"
   },
   "author": "https://github.com/IvanMochalov",
   "license": "ISC",
