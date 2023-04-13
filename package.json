@@ -10,7 +10,7 @@
   "scripts": {
     "yo-create": "yo react-ts-component-dir",
     "build:dev": "cross-env NODE_ENV=development webpack --config webpack.config.js",
-    "build": "npm install && cross-env NODE_ENV=production webpack --config webpack.config.js",
+    "build": "cross-env NODE_ENV=production webpack --config webpack.config.js",
     "dev": "cross-env NODE_ENV=development CLIENT_ID=7jhaNYgHvNLiEJh8DPHRUw node ./bin/dev.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./dist/server/server.js"
