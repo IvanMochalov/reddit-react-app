@@ -1,7 +1,7 @@
 import React from 'react';
-import { Icon } from '../../../../Icons';
-import { Text } from '../../../../Text';
-import { EIcons, EColors } from '../../../../../exports';
+import { Icon } from './../Icons';
+import { Text } from './../Text';
+import { EIcons, EColors } from './../../exports';
 import styles from './menuitemlist.css';
 
 export function MenuItemList() {

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks/useReduxHooks";
 import { fetchPostsData } from "../../store/postsSlice";
-import { Card } from "./Card/Card";
+import { Card } from "../Card/Card";
 import styles from "./cardlist.css";
 
 import { FixedSizeList as CardListWrapper } from "react-window";

@@ -1,10 +1,10 @@
 import React from 'react';
-import { Break } from '../../../Break';
-import { Text } from '../../../Text';
-import { EColors } from '../../../../exports';
-import { IconAnon } from '../../../Icons'
+import { Break } from './../Break';
+import { Text } from './../Text';
+import { EColors } from './../../exports';
+import { IconAnon } from './../Icons'
 import styles from './userblock.css';
-import { useAppSelector } from '../../../../hooks/useReduxHooks'
+import { useAppSelector } from './../../hooks/useReduxHooks'
 import { Link } from 'react-router-dom'
 
 interface IUserBlockProps {

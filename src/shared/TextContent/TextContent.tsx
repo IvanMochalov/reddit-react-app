@@ -1,8 +1,8 @@
 import React from 'react';
-import { convertData } from '../../../../utils/js/convertData'
+import { convertData } from './../../utils/js/convertData'
 import styles from './textContent.css';
-import { Title } from './Title';
-import { UserLink } from './UserLink';
+import { Title } from './../Title';
+import { UserLink } from './../UserLink';
 
 interface ITextContentProps {
   postTitle?: string;

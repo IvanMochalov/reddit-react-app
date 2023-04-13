@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './shareButton.css';
-import { ShareIcon } from '../../../../Icons'
+import { ShareIcon } from './../Icons'
 
 export function ShareButton() {
   return (

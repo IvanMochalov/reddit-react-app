@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './commentButton.css';
-import { Icon } from '../../../../Icons';
-import { EColors, EIcons } from '../../../../../exports';
+import { Icon } from './../Icons';
+import { EColors, EIcons } from './../../exports';
 
 export function CommentButton() {
   return (

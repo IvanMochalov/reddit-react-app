@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { EColors, EIcons } from "../../exports";
 import { convertData } from "../../utils/js/convertData";
-import { UserLink } from "../CardList/Card/TextContent/UserLink";
+import { UserLink } from "./../UserLink";
 import { AnswerFormContainer } from "../AnswerFormContainer";
 import { Icon } from "../Icons";
 import { Text } from "../Text";

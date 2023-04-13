@@ -1,9 +1,9 @@
 import React from 'react';
-import { Dropdown } from '../../../Dropdown';
-import { MenuItemList } from './MenuItemList';
-import { MenuIcon } from '../../../Icons'
-import { Text } from '../../../Text';
-import { EColors } from '../../../../exports';
+import { Dropdown } from './../Dropdown';
+import { MenuItemList } from './../MenuItemList';
+import { MenuIcon } from './../Icons'
+import { Text } from './../Text';
+import { EColors } from './../../exports';
 import styles from './menu.css';
 
 

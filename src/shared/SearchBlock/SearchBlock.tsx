@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import styles from './searchblock.css';
-import { UserBlock } from './UserBlock';
-import { useAppDispatch, useAppSelector } from '../../../hooks/useReduxHooks';
-import { fetchUserData } from '../../../store/userSlice';
+import { UserBlock } from './../UserBlock';
+import { useAppDispatch, useAppSelector } from './../../hooks/useReduxHooks';
+import { fetchUserData } from './../../store/userSlice';
 
 export function SearchBlock() {
   const dispatch = useAppDispatch();
