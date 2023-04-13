@@ -3,7 +3,6 @@
   "name": "reddit-react-app",
   "version": "1.0.0",
   "description": "This is a training app",
-  "main": "webpack.config.js",
   "engines": {
     "node": "14.x"
   },
