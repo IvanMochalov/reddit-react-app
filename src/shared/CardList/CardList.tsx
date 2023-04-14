@@ -4,9 +4,7 @@ import { fetchPostsData } from "../../store/postsSlice";
 import { Card } from "../Card/Card";
 import styles from "./cardlist.css";
 
-import { FixedSizeList as CardListWrapper } from "react-window";
-import AutoSizer from 'react-virtualized-auto-sizer';
-import { Outlet } from 'react-router-dom'
+import { Outlet } from 'react-router-dom';
 
 export interface IPostObject {
   id?: string;
