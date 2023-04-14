@@ -11,7 +11,9 @@ const app = express();
 
 if (IS_PROD) {
   app.use(compression());
-  app.use(helmet());
+  app.use(helmet({
+    contentSecurityPolicy: false,
+  }));
 }
 
 app.use("/static", express.static("./dist/client"));
