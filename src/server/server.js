@@ -11,7 +11,7 @@ const app = express();
 
 if (!IS_DEV) {
   app.use(compression());
-  app.use(helmet());
+  // app.use(helmet());
 }
 
 app.use("/static", express.static("./dist/client"));
