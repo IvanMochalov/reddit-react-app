@@ -3,13 +3,13 @@ import ReactDOM from "react-dom/server";
 import { indexHtmlTemplate } from "./indexHtmlTemplate";
 import { App } from "../App";
 import axios from 'axios';
-import { params, PORT, IS_DEV } from './../variables';
+import { params, PORT, IS_DEV, IS_PROD } from './../variables';
 import compression from 'compression';
 import helmet from 'helmet';
 
 const app = express();
 
-if (!IS_DEV) {
+if (IS_PROD) {
   app.use(compression());
   // app.use(helmet());
 }
