@@ -11,10 +11,6 @@ const app = express();
 
 if (IS_PROD) {
   app.use(compression());
-  // app.use(helmet({
-  //   contentSecurityPolicy: false,
-  //   crossOriginResourcePolicy: "cross-origin",
-  // }))
   app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 }
 
