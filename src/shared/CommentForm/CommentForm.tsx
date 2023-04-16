@@ -1,11 +1,13 @@
 import React, { ChangeEvent, FormEvent } from "react";
 import styles from "./commentForm.css";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { useAppDispatch } from "../../hooks/useReduxHooks";
-import { updateComment } from "../../store/mainSlice";
+import { useAtom } from 'jotai';
+import { comment } from '../../store/commentJotai';
+
 
 interface ICommentFormProps {
   name?: string;
+  placeholder?: string;
   btnText?: string;
   value?: string;
   link?: any;
@@ -20,11 +22,13 @@ interface ICommentFormData {
 export function CommentForm({
   name,
   btnText,
-  onChange,
   value,
   link,
+  placeholder,
+  onChange,
 }: ICommentFormProps) {
-  const dispatch = useAppDispatch();
+
+  const [commentText, setCommentText] = useAtom(comment);
 
   const {
     register,
@@ -37,7 +41,7 @@ export function CommentForm({
 
   const onSubmit: SubmitHandler<ICommentFormData> = (data) => {
     alert(`Комментарий '${data.commentText}' отправлен пользователем ${name}`);
-    dispatch(updateComment(""));
+    setCommentText('');
     reset();
   };
 
@@ -57,11 +61,7 @@ export function CommentForm({
           },
         })}
         aria-invalid={errors.commentText?.message ? "true" : undefined}
-        placeholder={
-          name !== "undefined"
-            ? `${name}, оставьте ваш комментарий`
-            : `Пожалуйста, оставьте ваш комментарий`
-        }
+        placeholder={placeholder}
         value={value}
         onChange={onChange}
       />

@@ -18,7 +18,7 @@ export interface IPostObject {
 
 export function CardList() {
   const dispatch = useAppDispatch();
-  const token = useAppSelector((state) => state.main.token);
+  const token = useAppSelector((state) => state.authorization.token);
   const { posts, nextAfter, loading, error } = useAppSelector((state) => state.postsData);
   const { oauth } = useAppSelector((state) => state.userData);
   const [requestCount, setRequestCount] = useState(0);

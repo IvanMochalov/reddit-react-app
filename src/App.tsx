@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { hot } from "react-hot-loader/root";
+import "./main.global.css";
 import { CardList } from "./shared/CardList";
 import { Content } from "./shared/Content";
 import { Header } from "./shared/Header";
 import { Layout } from "./shared/Layout";
-import "./main.global.css";
 
 import { Provider } from "react-redux";
-import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 import { useAppDispatch } from "./hooks/useReduxHooks";
-import { setToken } from "./store/mainSlice";
+import { HomePage } from "./shared/HomePage";
+import { NotFound } from "./shared/NotFound";
+import { Post } from "./shared/Post";
+import { setToken } from "./store/authorizationSlice";
 import store from "./store/index";
-import { Post } from './shared/Post'
-import { NotFound } from './shared/NotFound'
-import { HomePage } from './shared/HomePage'
 
 function AppComponent() {
   const dispatch = useAppDispatch();
@@ -23,15 +23,18 @@ function AppComponent() {
 
   useEffect(() => {
     if (!localStorage.token) {
-      localStorage.setItem('token', 'undefined')
+      localStorage.setItem("token", "undefined");
     }
-    const token = (localStorage.getItem('token') === 'undefined') ? window.__token__ : localStorage.getItem('token');
+    const token =
+      localStorage.getItem("token") === "undefined"
+        ? window.__token__
+        : localStorage.getItem("token");
     dispatch(setToken(token));
     if (token) {
-      localStorage.setItem('token', token)
+      localStorage.setItem("token", token);
     }
 
-    setMounted(true)
+    setMounted(true);
   }, []);
 
   return (
@@ -42,13 +45,16 @@ function AppComponent() {
             <Header />
             <Content>
               <Routes>
-                <Route path='/posts' element={<CardList />}>
-                  <Route path='/posts/:postId' element={<Post />} />
+                <Route path="/posts" element={<CardList />}>
+                  <Route path="/posts/:postId" element={<Post />} />
                 </Route>
-                <Route path='/auth' element={<Navigate  to='/posts' replace />} />
-                <Route path='*' element={<NotFound />} />
-                <Route path='/' element={<HomePage />} />
-                <Route path='/account' element={<Post />} />
+                <Route
+                  path="/auth"
+                  element={<Navigate to="/posts" replace />}
+                />
+                <Route path="*" element={<NotFound />} />
+                <Route path="/" element={<HomePage />} />
+                <Route path="/account" element={<Post />} />
               </Routes>
             </Content>
           </Layout>

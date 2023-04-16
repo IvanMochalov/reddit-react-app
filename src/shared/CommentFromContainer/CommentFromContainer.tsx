@@ -1,29 +1,28 @@
 import React, { ChangeEvent } from "react";
-import { useAppDispatch, useAppSelector } from "../../hooks/useReduxHooks";
-import { updateComment } from "../../store/mainSlice";
+import { useAppSelector } from "../../hooks/useReduxHooks";
 import { CommentForm } from "../CommentForm";
+import { useAtom } from 'jotai';
+import { comment } from '../../store/commentJotai';
 
 export function CommentFormContainer() {
-  const value = useAppSelector((state) => state.main.commentText);
-  const { name } = useAppSelector(state => state.userData.data);
-
-  const dispatch = useAppDispatch();
+  const [commentText, setCommentText] = useAtom(comment);
 
   function handleChange(event: ChangeEvent<HTMLTextAreaElement>) {
-    dispatch(updateComment(event.target.value));
+    setCommentText(event.target.value);
   }
 
-  // function handleSubmit(event: FormEvent) {
-  //   event.preventDefault();
-  //   alert('Форма отправлена')
-  // }
+  const { name } = useAppSelector(state => state.userData.data);
 
   return (
     <CommentForm
       name={name}
-      value={value}
+      value={commentText}
       onChange={handleChange}
-      // onSubmit={handleSubmit}
+      placeholder={
+        name !== "undefined"
+          ? `${name}, оставьте ваш комментарий`
+          : `Пожалуйста, оставьте ваш комментарий`
+      }
     />
   );
 }

@@ -6,7 +6,7 @@ import { fetchUserData } from './../../store/userSlice';
 
 export function SearchBlock() {
   const dispatch = useAppDispatch();
-  const token = useAppSelector(state => state.main.token)
+  const token = useAppSelector(state => state.authorization.token)
   const { data, loading, error } = useAppSelector(state => state.userData);
 
   useEffect(() => {

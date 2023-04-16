@@ -1,12 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-import mainReducer from "./mainSlice";
+import authorizationReducer from "./authorizationSlice";
+import commentsSlice from "./commentsSlice";
+import postsSlice from "./postsSlice";
 import userSlice from "./userSlice";
-import postsSlice from "./postsSlice"
-import commentsSlice from "./commentsSlice"
 
 const store = configureStore({
   reducer: {
-    main: mainReducer,
+    authorization: authorizationReducer,
     userData: userSlice,
     postsData: postsSlice,
     commentsData: commentsSlice,

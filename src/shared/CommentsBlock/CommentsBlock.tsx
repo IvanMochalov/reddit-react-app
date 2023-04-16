@@ -18,7 +18,7 @@ interface ICommentsBlockProps {
 }
 
 export function CommentsBlock({ postId }: ICommentsBlockProps) {
-  const token = useAppSelector((state) => state.main.token);
+  const token = useAppSelector((state) => state.authorization.token);
   const {comments, loading, error} = useAppSelector((state) => state.commentsData);
   const dispatch = useAppDispatch();
 
