@@ -86,7 +86,11 @@ export function CardList() {
 
       <div ref={bottomOfList} />
 
-      {!isRenderList && <button className={styles.show_more} onClick={handleClick}>{"Download more"}</button>}
+      {!isRenderList && (
+        <div className={styles.btn_wrapper}>
+          <button className={styles.show_more} onClick={handleClick}>{"Download more"}</button>
+        </div>
+      )}
 
       {loading && <div className={styles.loading}>{"Loading..."}</div>}
 

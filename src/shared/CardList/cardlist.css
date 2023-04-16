@@ -4,8 +4,12 @@
     text-align: center;
   }
 }
+.btn_wrapper {
+  text-align: center;
+}
 .show_more {
   padding: 15px 25px;
+  margin-bottom: 30px;
   font-size: 16px;
   color: var(--black);
   border-color: currentColor;
